@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "AdressList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+
+@model List<DTO.AddressDTO>
+
+<section class="content-header">
+    <h1>Meta List</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Address</a></li>
+        <li class="breadcrumb-item active"><a>Address List</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    <a href="/Admin/Address/AddAddress"><button class="btn btn-primary">Add Address</button></a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td>@item.AddressContent</td>
+                        <td>
+                            @item.Phone2
+                        </td>
+                        <td title="Edit" align="center"><a href="/Admin/Address/UpdateAddress/@item.ID"><i class="far fa-edit"></i></a></td>
+                        <td title="Delete" align="center"><a href="#"><i class="fas fa-trash-alt" style="color:red" onclick="AskQuestion('/Admin/Address/DeleteAddress/', @item.ID)"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/js/DeleteRecord.js"></script>

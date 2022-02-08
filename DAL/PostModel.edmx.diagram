@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5ffa56aa39f4922a72530a9e726031b" Name="Diagram1">
+        <EntityTypeShape EntityType="PostdataModel.Address" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Ad" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Category" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Comment" Width="1.5" PointX="7.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Contact" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.FavLogoTitle" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Meta" Width="1.5" PointX="3" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Post" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.PostImage" Width="1.5" PointX="10.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.PostTag" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.SocialMedia" Width="1.5" PointX="3" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.sysdiagram" Width="1.5" PointX="5.875" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.T_User" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostdataModel.Video" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <AssociationConnector Association="PostdataModel.FK_Address_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Ads_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Category_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Post_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Comment_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Comment_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Contact_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_FavLogoTitle_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Meta_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Post_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_PostImage_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_PostTag_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_PostImage_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_PostTag_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_SocialMedia_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PostdataModel.FK_Video_T_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PostdataModel.Log_Table" Width="1.5" PointX="7.25" PointY="37.125" />
+        <EntityTypeShape EntityType="PostdataModel.ProcessType" Width="1.5" PointX="3.5" PointY="38.375" />
+        <AssociationConnector Association="PostdataModel.FK_Log_Table_ProcessType" />
+        <AssociationConnector Association="PostdataModel.FK_Log_Table_T_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

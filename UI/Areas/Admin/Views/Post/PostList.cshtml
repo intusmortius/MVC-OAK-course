@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "PostList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+@using DTO
+@{ 
+    CountDTO countdto = (CountDTO)ViewData["AllCounts"];
+}
+
+@model List<PostDTO>
+
+<section class="content-header">
+    <h1>Post List</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Post</a></li>
+        <li class="breadcrumb-item active"><a>Post List</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    <a href="/Admin/Post/AddPost"><button class="btn btn-primary">Add Post</button></a>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>@countdto.PostCount</h3>
+
+                    <p>Post Counts</p>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>@countdto.ViewCount</h3>
+
+                    <p>Sum View Count</p>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>@countdto.CommentCount</h3>
+
+                    <p>Comment Count</p>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>@countdto.MessageCount</h3>
+
+                    <p>Message Count</p>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category Name</th>
+                    <th>Add Date</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td>@item.Title</td>
+                        <td>
+                            @item.CategoryName
+                        </td>
+                        <td>
+                            @item.AddDate.ToString("dd.MM.yyyy, dddd")
+                        </td>
+                        <td title="Edit" align="center"><a href="/Admin/Post/UpdatePost/@item.ID"><i class="far fa-edit"></i></a></td>
+                        <td title="Delete" align="center"><a href="#"><i class="fas fa-trash-alt" style="color:red" onclick="AskQuestion('/Admin/Post/DeletePost/', @item.ID)"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Title</th>
+                    <th>Category Name</th>
+                    <th>Add Date</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/js/DeleteRecord.js"></script>
